@@ -48,17 +48,18 @@ void FindItem(int[,] array, int x, int y, int rows_number, int cols_number)
     if (x < rows_number && y < cols_number)
     {
         int item = array[x, y];
-        System.Console.WriteLine(item);
+        System.Console.WriteLine("\nЭлемент найден: " + item + "\n");
     }
-    else System.Console.WriteLine("Такого элемента не существует");
+    else System.Console.WriteLine("\nТакого элемента не существует\n");
 }
 // ------------------------------ Решение ----------------
 
 int rows = ReadInt("Введите количество строк: ");
 int cols = ReadInt("Введите количество столбцов: ");
-int row_position = ReadInt("Введите позицию в строке: ");
-int col_position = ReadInt("Введите позицию в столбце: ");
+int row_position = ReadInt("Введите позицию в строке (отсчёт от нуля): ");
+int col_position = ReadInt("Введите позицию в столбце: (отсчёт от нуля)");
 
 int[,] matrix = FillMatrix(rows, cols, 0, 100);
+System.Console.WriteLine("\nВывод значений массива: ");
 PrintMatrix(matrix);
 FindItem(matrix, row_position, col_position, rows, cols);
